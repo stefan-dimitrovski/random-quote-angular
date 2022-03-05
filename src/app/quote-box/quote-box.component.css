@@ -1,0 +1,116 @@
+#quote-box {
+  display: grid;
+  height: 30em;
+  user-select: none;
+  align-content: center;
+}
+
+main {
+  border-radius: 15px;
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  font-family: monospace;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#text {
+  padding: 0 2em 1em 2em;
+  font-size: 2em;
+  color: var(--random-color);
+  font-weight: 500;
+}
+
+#author {
+  color: var(--random-color);
+  font-family: monospace;
+  font-size: 1.2em;
+  position: relative;
+  bottom: 0.5em;
+  right: 4.5em;
+  height: 2em;
+  text-align: right;
+}
+
+#buttons-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  flex-direction: row;
+}
+
+#tweet-quote {
+  margin-bottom: 1em;
+  margin-left: 4.5em;
+  margin-right: 4.5em;
+  text-decoration: none;
+  background: var(--random-color);
+  border: 1px solid var(--random-color);
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1em;
+  padding: 12px 14px;
+}
+
+#tweet-quote:hover {
+  background-color: initial;
+  color: var(--random-color);
+}
+
+#new-quote {
+  margin-left: 4.5em;
+  margin-right: 4.5em;
+  background: var(--random-color);
+  border: 1px solid var(--random-color);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1em;
+  padding: 12px 14px;
+}
+
+#new-quote:hover {
+  background-color: initial;
+  color: var(--random-color);
+}
+
+#error-btn {
+  margin-bottom: 1em;
+  background: var(--random-color);
+  border: 1px solid var(--random-color);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1em;
+  padding: 12px 14px;
+}
+
+#error-btn:hover {
+  background-color: initial;
+  color: var(--random-color);
+}
+
+#error {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1000px) {
+  #buttons-flex {
+    flex-direction: column;
+  }
+}
