@@ -27,7 +27,7 @@ export class QuoteBoxComponent implements OnInit {
             .subscribe({
                 next: (quote) => {
                     this.isLoading = !this.isLoading;
-                    this.quote = quote;
+                    this.quote = quote.quotes[0];
                     this.color = this.generateDarkColor();
                     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
                         this.color;

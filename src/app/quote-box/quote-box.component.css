@@ -2,7 +2,6 @@
   display: grid;
   height: 30em;
   user-select: none;
-  align-content: center;
 }
 
 main {
@@ -25,7 +24,7 @@ main {
 #author {
   color: var(--random-color);
   font-family: monospace;
-  font-size: 1.2em;
+  font-size: 1.5em;
   position: relative;
   bottom: 0.5em;
   right: 4.5em;
@@ -110,6 +109,12 @@ main {
 }
 
 @media screen and (max-width: 1000px) {
+  #text {
+    font-size: 1.5em;
+  }
+  #author {
+    font-size: 1.3em;
+  }
   #buttons-flex {
     flex-direction: column;
   }

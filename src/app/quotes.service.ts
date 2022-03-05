@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Quote } from './domain/quote';
+import { QuoteResponse } from './domain/quote-response';
 import { delay, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -9,7 +10,9 @@ import { delay, Observable } from 'rxjs';
 export class QuotesService {
     constructor(private http: HttpClient) {}
 
-    getQuote(): Observable<Quote> {
-        return this.http.get<Quote>('/api/quotes').pipe(delay(300));
+    getQuote(): Observable<QuoteResponse> {
+        return this.http
+            .get<QuoteResponse>(`${environment.server}/api/v1/random?count=1`)
+            .pipe(delay(300));
     }
 }
