@@ -13,6 +13,6 @@ export class QuotesService {
     getQuote(): Observable<QuoteResponse> {
         return this.http
             .get<QuoteResponse>(`${environment.server}/api/v1/random?count=1`)
-            .pipe(delay(300));
+            .pipe(delay(450));
     }
 }

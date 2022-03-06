@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, ElementRef } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { Subject, switchMap } from 'rxjs';
 import { Quote } from '../domain/quote';
 import { QuotesService } from '../quotes.service';
@@ -16,10 +16,7 @@ export class QuoteBoxComponent implements OnInit {
 
     @HostBinding('style.--random-color') color: string | null = null;
 
-    constructor(
-        private quoteService: QuotesService,
-        private elementRef: ElementRef
-    ) {}
+    constructor(private quoteService: QuotesService) {}
 
     ngOnInit(): void {
         this.fetchQuote$
@@ -29,15 +26,11 @@ export class QuoteBoxComponent implements OnInit {
                     this.isLoading = !this.isLoading;
                     this.quote = quote.quotes[0];
                     this.color = this.generateDarkColor();
-                    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
-                        this.color;
                 },
                 error: (error) => {
                     this.isLoading = !this.isLoading;
                     this.errorMsg = 'Unable to fetch quote!';
                     this.color = this.generateDarkColor();
-                    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
-                        this.color;
                 },
             });
         this.fetchQuote$.next();

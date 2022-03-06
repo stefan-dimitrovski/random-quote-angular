@@ -1,13 +1,14 @@
-#quote-box {
+#container {
+  height: 100vh;
   display: grid;
-  height: 30em;
   user-select: none;
+  background-color: var(--random-color);
 }
 
-main {
+#quote-box {
   border-radius: 15px;
   background-color: white;
-  width: 50%;
+  width: 25%;
   margin: auto;
   font-family: monospace;
   border-radius: 15px;
@@ -40,13 +41,12 @@ main {
 }
 
 #tweet-quote {
-  margin-bottom: 1em;
   margin-left: 4.5em;
   margin-right: 4.5em;
   text-decoration: none;
   background: var(--random-color);
   border: 1px solid var(--random-color);
-  border-radius: 50px;
+  border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   color: #ffffff;
   cursor: pointer;
@@ -109,13 +109,91 @@ main {
 }
 
 @media screen and (max-width: 1000px) {
+  #quote-box {
+    min-width: 20em;
+  }
+  #tweet-quote {
+    min-width: 5em;
+  }
+  #new-quote {
+    min-width: 7em;
+  }
+}
+
+@media screen and (max-width: 1900px) {
   #text {
     font-size: 1.5em;
   }
   #author {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
   #buttons-flex {
     flex-direction: column;
+  }
+  #tweet-quote {
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (min-width: 4500px) {
+  #quote-box {
+    margin-top: 40em;
+    border-radius: 4em;
+    min-width: 250em;
+  }
+  #text {
+    font-size: 10em;
+  }
+  #author {
+    font-size: 5em;
+  }
+  #buttons-flex {
+    flex-direction: row;
+  }
+  #tweet-quote {
+    padding: 0.5em;
+    font-size: 4em;
+    border-radius: 0.5em;
+  }
+  #new-quote {
+    font-size: 4.5em;
+    border-radius: 0.5em;
+  }
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100px;
+  height: 100px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid black;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+    border-color: aqua transparent aqua transparent;
+  }
+  25% {
+    border-color: plum transparent plum transparent;
+  }
+  50% {
+    border-color: red transparent red transparent;
+  }
+  75% {
+    border-color: green transparent green transparent;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: yellow transparent yellow transparent;
   }
 }

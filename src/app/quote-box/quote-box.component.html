@@ -1,26 +1,27 @@
-<div id="quote-box">
-  <main class="main">
+<div id="container">
+  <div id="quote-box">
     <p id="text" *ngIf="quote">"{{ quote.text }}"</p>
 
     <p *ngIf="errorMsg" id="error">{{ errorMsg }}</p>
 
-    <img src="../../assets/loader.gif" *ngIf="isLoading" />
+    <div class="lds-dual-ring" *ngIf="isLoading"></div>
 
     <p id="author" *ngIf="quote">-{{ quote.author }}</p>
 
     <div id="buttons-flex" *ngIf="quote">
+
       <a
         href="https://twitter.com/intent/tweet?hastag=quotes&text={{
           quote.text
         }}"
         target="_blank"
         id="tweet-quote"
-        >Tweet</a
-      >
+        ><i class="fa fa-twitter fa-2x"></i
+      ></a>
 
       <button type="button" id="new-quote" (click)="newQuote()">
         New Quote
       </button>
     </div>
-  </main>
+  </div>
 </div>
