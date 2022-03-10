@@ -43,7 +43,7 @@ export class QuoteBoxComponent implements OnInit {
     }
 
     generateDarkColor() {
-        var color = '#';
+        let color = '#';
         for (var i = 0; i < 6; i++) {
             color += Math.floor(Math.random() * 10);
         }
